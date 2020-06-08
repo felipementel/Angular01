@@ -1,0 +1,54 @@
+<br>
+<br>
+<br>
+<div class="container main-container" >
+    <h3>Interpolation</h3>
+
+    <p>O número de clique é: {{ contadorClique }}</p>
+
+    <p [ngClass]="{
+    'text-secondary': contadorClique < 3,
+    'text-success': contadorClique >= 3,
+    'text-warning': contadorClique >=5,
+    'text-danger': contadorClique >=9
+    }" >O número de cliques é: {{ contadorClique }}</p>
+    <br>
+    <br>
+    <h3>Property Binding</h3>
+    <button class="btn btn-info" [disabled]="contadorClique >= 10" >Clique</button>
+    <br>
+    <br>
+    <img [src]="urlImagem" height="50px" width="50px">
+    <br>
+    <br>
+    <h3>Event Binding</h3>
+    <br>
+    <br>
+    <button class="btn btn-warning" (click)='adicioanrClique()'>Cliquei-me</button>
+    <button class="btn btn-danger" (click)='zerarContador()' [disabled]='contadorClique < 10'>Cliquei-me</button>
+<br>
+<br>
+<h3>Two-way Binding</h3>
+<input type="text" (keyup)='KeyUp($event)' placeholder="Digite seu nome" />
+<br>
+<br>
+<label>Seu nome é: {{ nomeKeyUp }}</label>
+<br>
+<br>
+<input type="text" [ngModel]="nomeTwoWayBinding" (ngModelChange)='nomeTwoWayBinding = $event' placeholder="Digite seu nome" />
+<br>
+<br>
+<label>Seu nome é: {{ nomeTwoWayBinding }}</label>
+<br>
+<br>
+<input type="text" [(ngModel)]="nomeElegante" placeholder="Digite seu nome" />
+<br>
+<br>
+<label class="{{ nomeElegante }}">Seu nome é: {{ nomeElegante }}</label>
+<br>
+<label [ngClass]="nomeElegante">Seu nome é: {{ nomeElegante }}</label>
+<br>
+<br>
+<br>
+<br>
+</div>   
